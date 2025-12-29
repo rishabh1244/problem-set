@@ -1,0 +1,10 @@
+{
+    "name": "sample problem",
+    "description": " idk what this dose",
+    "prompt": "write some random complicated C code for break the code problem set dont write comments",
+    "author": "rishabh1244",
+    "tags": [
+        "C"
+    ],
+    "Tech": "C"
+}

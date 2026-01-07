@@ -45,6 +45,8 @@ bool test_case(const string &input_file, const string &expected_file) {
 
   return trim(output) == trim(expected);
 }
+
+
 int main() {
   vector<pair<string, string>> tests = {
       {"test/input1.txt", "test/expected1.txt"},
@@ -57,8 +59,10 @@ int main() {
     auto &t = tests[i];
     bool ok = test_case(t.first, t.second);
 
+    string inputName = t.first.substr(t.first.find_last_of('/') + 1);
+
     cout << "    {\n";
-    cout << "      \"input\": \"" << t.first << "\",\n";
+    cout << "      \"input\": \"" << inputName << "\",\n";
     cout << "      \"status\": \"" << (ok ? "PASS" : "FAIL") << "\"\n";
     cout << "    }";
 

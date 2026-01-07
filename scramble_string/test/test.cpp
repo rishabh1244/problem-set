@@ -45,16 +45,26 @@ bool test_case(const string &input_file, const string &expected_file) {
 
   return trim(output) == trim(expected);
 }
-
 int main() {
   vector<pair<string, string>> tests = {
       {"test/input1.txt", "test/expected1.txt"},
       {"test/input2.txt", "test/expected2.txt"},
   };
 
-  for (auto &t : tests) {
+  cout << "{\n  \"tests\": [\n";
+
+  for (size_t i = 0; i < tests.size(); i++) {
+    auto &t = tests[i];
     bool ok = test_case(t.first, t.second);
 
-    cout << t.first << ": " << (ok ? "PASS" : "FAIL") << "\n";
+    cout << "    {\n";
+    cout << "      \"input\": \"" << t.first << "\",\n";
+    cout << "      \"status\": \"" << (ok ? "PASS" : "FAIL") << "\"\n";
+    cout << "    }";
+
+    if (i + 1 < tests.size()) cout << ",";
+    cout << "\n";
   }
+
+  cout << "  ]\n}\n";
 }

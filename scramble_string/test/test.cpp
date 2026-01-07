@@ -45,8 +45,6 @@ bool test_case(const string &input_file, const string &expected_file) {
 
   return trim(output) == trim(expected);
 }
-
-
 int main() {
   vector<pair<string, string>> tests = {
       {"test/input1.txt", "test/expected1.txt"},

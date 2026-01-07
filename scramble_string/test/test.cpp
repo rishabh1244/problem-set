@@ -50,7 +50,7 @@ int main() {
       {"test/input1.txt", "test/expected1.txt"},
       {"test/input2.txt", "test/expected2.txt"},
   };
-
+cout << "===TEST_OUTPUT===\n";
   cout << "{\n  \"tests\": [\n";
 
   for (size_t i = 0; i < tests.size(); i++) {
